@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Assure que le padding et la bordure sont inclus dans la largeur totale */
+}
+
+body {
+    margin: 0px;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Empêche le défilement */
+    width: 1737px; /* Largeur fixe pour le body */
+    background-color: rgb(12, 7, 1);
+}
+
+/*---------------------------------------------------  Menu de navigation. --------------------------------------------------- */
+.navbar {
+    position: fixed; /* Fixe le menu en haut de la page */
+    top: 0;
+    left: 0;
+    width: 100%; /* Prend toute la largeur de la fenêtre */
+    background: rgba(0, 0, 0, 0.8); /* Couleur de fond semi-transparente */
+    padding: 10px 0; /* Espacement vertical dans le menu */
+    z-index: 100; /* Assure que le menu est au-dessus des autres éléments */
+    transition: top 0.3s ease; /* Transition douce lors du changement de position */
+    z-index: 9999;
+}
+
+.navbar ul {
+    display: flex; /* Utilise Flexbox pour l'affichage des éléments */
+    justify-content: center; /* Centre les éléments horizontalement */
+    list-style: none; /* Retire les puces de la liste */
+}
+
+.navbar ul li {
+    margin: 0 20px; /* Espacement horizontal entre les éléments de la liste */
+}
+
+.navbar ul li a {
+    color: #fff; /* Couleur du texte des liens */
+    text-decoration: none; /* Retire le soulignement des liens */
+    font-size: 16px; /* Taille de police des liens */
+    font-weight: 400;
+}
+
+.navbar ul li a:hover {
+    color: #f0a500; /* Couleur des liens au survol */
+}
+
+.hero-content h1 {
+    font-size: 3em; /* Taille de police pour le titre */
+    margin: 0; /* Pas de marge autour du titre */
+}
+
+.hero-content p {
+    font-size: 1.5em; /* Taille de police pour le texte */
+    margin: 10px 0 0; /* Espacement au-dessus du texte */
+}
+
+/*---------------------------------------------------  Cadrage des sections. ---------------------------------------------------  */
+section, aside, header, footer {
+    max-width: 1737px; /* Largeur maximale pour les sections */
+    margin: 0 auto; /* Centre l'élément horizontalement */
+    height: auto; /* Hauteur auto, s'ajustant au contenu */
+    padding: 20px; /* Optionnel : pour ajouter de l'espace autour du contenu */
+}
+
+/* Style des sections */
+.section {
+    height: 100vh;
+    width: 1737px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-bottom: 60px;
+    position: relative;
+    max-width: 1600px;
+    max-height: 760px;
+    margin: 0 auto;
+    padding: 20px;
+    top: 0;
+}
+
+/* Optimisation pour le rendu des animations */
+.section {
+    will-change: opacity, transform; /* Optimisation pour le rendu des animations */
+}
+
+/*--------------------------------------------------- Section Contact. --------------------------------------------------- */
+/* Styles généraux pour la section de contact */
+#contact {
+    width: 1737px; /* Largeur fixe du formulaire */
+    margin: 0 auto; /* Centre horizontalement */
+    opacity: 0; /* Masque le formulaire au départ pour l'animation */
+    transform: translateY(50px); /* Positionne le formulaire 50px plus bas */
+    animation: slideUp 0.5s forwards; /* Animation qui s'applique au chargement */
+    background-color: #f9f9f993; /* Couleur de fond du formulaire */
+}
+
+/* Style du formulaire de contact */
+.contact-form {
+    display: flex; /* Utilise Flexbox */
+    flex-direction: column; /* Aligne les éléments en colonne */
+    align-items: center; /* Centre les éléments horizontalement */
+    width: 533px; /* Largeur du formulaire */
+    margin: 0 auto; /* Centre horizontalement */
+    padding: 20px; /* Espace autour du contenu */
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 8px; /* Coins arrondis */
+    max-width: 600px; /* Largeur maximale */
+    gap: 10px; /* Espacement entre les éléments */
+    background-color: #f9f9f925; /* Couleur de fond du formulaire */
+    box-shadow: -1px 0px 0px 20px rgba(0, 0, 0, 0.1); /* Ombre portée */
+}
+
+/* Styles des groupes de formulaires */
+.form-group {
+    display: flex; /* Utilise Flexbox */
+    justify-content: space-between; /* Espace entre les éléments */
+    margin-bottom: 15px; /* Espacement entre les éléments */
+}
+
+/* Styles pour les labels */
+.contact-form label {
+    margin-bottom: 5px; /* Espace entre le label et le champ */
+    font-weight: bold; /* Met en gras les labels */
+}
+
+/* Styles pour les champs de saisie et les zones de texte */
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* Champs de saisie prennent toute la largeur */
+    padding: 10px; /* Espace intérieur pour les champs */
+    margin-bottom: 15px; /* Espace entre les champs */
+    border: 1px solid #007bff; /* Bordure légère */
+    border-radius: 5px; /* Coins arrondis pour les champs */
+    font-size: 16px; /* Taille de police */
+}
+
+/* Styles pour le bouton d'envoi */
+.contact-form button {
+    padding: 10px 20px; /* Espace intérieur du bouton */
+    background-color: #007bff; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte du bouton */
+    border: none; /* Pas de bordure */
+    border-radius: 4px; /* Coins arrondis */
+    cursor: pointer; /* Changement du curseur au survol */
+    transition: background-color 0.3s; /* Transition douce pour le changement de couleur */
+}
+
+.contact-form button:hover {
+    background-color: #0057b3e3; /* Couleur au survol */
+    padding: 10px 25px; /* Espace intérieur du bouton */
+}
+
+/* Conteneur pour le bouton d'envoi */
+.submit-container {
+    text-align: center; /* Centre le bouton d'envoi */
+    margin-top: 20px; /* Espacement au-dessus du bouton */
+}
+
+
+/* Styles pour la case à cocher */
+.checkbox-container {
+    display: flex; /* Utilise Flexbox */
+    align-items: center; /* Aligne verticalement */
+    justify-content: flex-start; /* Aligne à gauche */
+    margin: 25px 0; /* Espacement vertical */
+}
+
+/*----------------------------------  Cible uniquement la section avec l'ID "projets." ---------------------------------- */
+#projets-container {
+    padding: 30px; /* Espacement autour de la section */
+    background-color: #f9f9f993;
+    margin-top: 0px;
+}
+
+.project-item {
+    display: flex;
+    background-color: #f9f9f9da;
+    border: 1px solid #ddddddc3;
+    border-radius: 18px;
+    width: 180px;
+    height: 140px;
+    overflow: hidden;
+    text-align: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project-item img {
+    width: 50%;
+    height: 20px;
+    object-fit: contain;
+}
+
+p {
+    padding: 5px; /* Applique aux <p> qui sont enfants directs d'un sous-conteneur */
+}
+.project-item a {
+    display: block;
+    padding: 2px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0 0 8px 8px;
+    width: 100%;
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.project-item:hover {
+    transform: translate(-10%, -20%) scale(1.7); /* Augmente la taille au survol */
+}
+
+#projets > p {
+    padding: 5px;
+    font-size: 16px;
+}
+/*--------------------------------------------------- Section A propos. --------------------------------------------------- */
+#apropos {
+    background-color: #f9f9f993;
+    width: 1200px;
+}
+#apropos > p {
+    font-size:18px;
+    font-weight: 700;
+}
+#apropos > h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: -124px 0 28px 0;
+}
+/* Conteneur du logo W3C */
+.w3c-logo {
+    position: absolute; /* Positionnement absolu pour placer le logo précisément */
+    bottom: 50px; /* Ajuste cette valeur pour le placer juste au-dessus du footer */
+    left: 30px; /* Ajuste cette valeur pour l'aligner à gauche */
+    z-index: 10; /* Pour s'assurer qu'il soit visible au-dessus des autres éléments */
+}
+
+/* Ajustement de la taille du logo */
+.w3c-logo img {
+    width: 100px; /* Ajuste la taille du logo ici */
+    height: auto;
+}
+
+/*-----------------------------------------------------  footer. ------------------------------------------------------ */
+footer{
+    z-index: 9999;
+}
+
+footer p {
+    margin: 5px; /* Pas de marge pour les paragraphes dans le footer */
+}
+
+/*--------------------------------------------------- Responsive. --------------------------------------------------- */
+/* Media queries pour le responsive */
+@media (max-width: 768px) {
+    body {
+        width: 100%; /* Largeur à 100% pour les petits écrans */
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Aligne les éléments en colonne sur petits écrans */
+    }
+
+    .section {
+        padding: 10px; /* Réduit l'espacement sur petits écrans */
+    }
+
+    #contact {
+        width: 100%; /* Largeur à 100% pour le formulaire */
+    }
+
+    .contact-form {
+        width: 100%; /* Largeur à 100% pour le formulaire */
+    }
+}

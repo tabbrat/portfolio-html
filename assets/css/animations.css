@@ -1,0 +1,511 @@
+/* css Animations*/
+
+/* Hero avec deux images superposées et un effet parallaxe Effet parallaxe en continu */
+#hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    color: white;
+    z-index: 1;
+    height: 100vh; /* Hauteur de 100% de la fenêtre */
+}
+
+/* Assure que le contenu texte du hero est au-dessus du fond */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Assure que le texte est visible */
+    text-align: center;
+}
+
+
+
+/* Deuxième parallaxe */
+.parallax-secondary {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Derrière la première image */
+    animation: moveBackground2 25s linear infinite; /* Animation parallaxe deuxième image */
+}
+
+/* Animation parallaxe pour la première image */
+@keyframes moveBackground1 {
+    0% {
+        background-position: center top;
+    }
+    100% {
+        background-position: center bottom;
+    }
+}
+
+/* Animation parallaxe pour la deuxième image */
+@keyframes moveBackground2 {
+    0% {
+        background-position: center bottom;
+    }
+    100% {
+        background-position: center top;
+    }
+}
+
+
+/* Image de fond avec animation parallaxe */
+.parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1)), /* Dégradé blanc semi-transparent */
+        url('../images/hero-bg.jpg'), /* Première image */
+        linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), /* Dégradé noir semi-transparent */
+        url('../images/hero-bg.jpg'); /* Deuxième image */
+    background-size: cover;
+    background-position: center;
+    animation: moveBackground 10s linear infinite; /* Animation de parallaxe */
+    z-index: 0;
+    
+    /* Taille et ajustement de la position des images */
+    background-size: cover, cover; /* Taille des images */
+    background-position: center center, center center; /* Position des images */
+    background-attachment: fixed; /* Ajoute l'effet de parallaxe */
+    background-repeat: no-repeat; /* Évite la répétition des images */
+}
+
+#rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permet d'interagir avec le contenu au-dessus */
+    box-sizing: content-box;
+}
+
+.drop {
+    position: absolute;
+    align-items: center;
+    width: 3px; /* Largeur de chaque goutte */
+    height: 3px; /* Hauteur de chaque goutte */
+    background: rgba(255, 255, 255, 0.6); /* Couleur de la goutte */
+    animation: fall linear infinite; /* Animation de chute */
+}
+
+/* Animation de la pluie */
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh); /* Commence au-dessus de l'écran */
+    }
+    100% {
+        transform: translateY(100vh); /* Tombe en bas de l'écran */
+    }
+}
+
+.section.in-view {
+    opacity: 1; /* Rendre visible */
+    transform: translateY(0); /* Position d'origine */
+    transition: all 0.5s ease; /* Transition douce */
+}
+/* Animation de l'image de fond */
+@keyframes moveBackground {
+    0% {
+        transform: translateY(0) scale(1.0);
+    }
+    50% {
+        transform: translateY(-40px) scale(1.0);
+    }
+    100% {
+        transform: translateY(0) scale(1.0);
+    }
+}
+@keyframes slideUp {
+    from {
+        opacity: 0; /* Commence transparent */
+        transform: translateY(50px); /* Commence en bas */
+    }
+    to {
+        opacity: 1; /* Devenir visible */
+        transform: translateY(0); /* Remonte à sa position d'origine */
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Section pour les deux carrousels */
+.projects-section {
+    width: 100%;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column; /* Empile les carrousels verticalement */
+    align-items: center; /* Centre le contenu horizontalement */
+}
+
+/* Conteneur pour chaque carrousel avec le titre */
+.carousel-wrapper {
+    width: 100%; /* Utilise toute la largeur disponible */
+    margin-bottom: 80px; /* Espace entre les carrousels */
+    text-align: center;
+}
+
+/* Style du titre de chaque carrousel */
+.carousel-wrapper p {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 45px;
+    padding-top: 71px;
+}
+
+/* Container pour le premier carrousel */
+.carousel-container {
+        width: 100%;
+        max-width: 300px;
+        perspective: 1300px;
+        justify-content: center;
+        margin: 0 auto;
+}
+
+/* Taille et style des carrousels */
+.carousel {
+    width: 210px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: spin 60s infinite linear;
+    margin: 0 auto;
+}
+.carousel .carousel-2 > p  {
+    font-size: 10px;
+}
+/* Chaque face du carrousel */
+.carousel__face {
+    position: absolute;
+    height: 160px;
+    width: 80%;
+    top: 30%;
+    font-size: 13px;
+    border: 2px solid #0000ff;
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+    box-sizing: border-box;
+    transform-style: preserve-3d;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 12px 3px #00e3ffeb;
+    z-index: 2;
+}
+
+.carousel__face img {
+    max-width: 80%;
+    height: 30%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-end;
+}
+
+/* Animation de rotation */
+@keyframes spin {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Rotation 3D des éléments du carrousel pour 11 projets */
+
+
+.carousel__face:nth-child(1) {
+    transform: rotateY(0deg) translateZ(330px); /* Ajuste translateZ pour espacer davantage */
+}
+
+.carousel__face:nth-child(2) {
+    transform: rotateY(32.73deg) translateZ(330px); /* Espacement basé sur 32.73 degrés */
+}
+
+.carousel__face:nth-child(3) {
+    transform: rotateY(65.46deg) translateZ(330px);
+}
+
+.carousel__face:nth-child(4) {
+    transform: rotateY(98.19deg) translateZ(330px);
+}
+
+.carousel__face:nth-child(5) {
+    transform: rotateY(130.92deg) translateZ(330px);
+}
+
+.carousel__face:nth-child(6) {
+    transform: rotateY(163.65deg) translateZ(330px);
+}
+
+.carousel__face:nth-child(7) {
+    transform: rotateY(196.38deg) translateZ(330px);
+}
+
+.carousel__face:nth-child(8) {
+    transform: rotateY(229.11deg) translateZ(330px);
+}
+
+.carousel__face:nth-child(9) {
+    transform: rotateY(261.84deg) translateZ(330px);
+}
+
+.carousel__face:nth-child(10) {
+    transform: rotateY(294.57deg) translateZ(330px);
+}
+
+.carousel__face:nth-child(11) {
+    transform: rotateY(327.3deg) translateZ(330px);
+}
+
+/* Style du conteneur pour centrer le carrousel sur le socle */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Largeur maximale du carrousel et du socle */
+    margin: 0 auto; /* Centrer le carrousel et le socle horizontalement */
+}
+
+/* Style de la base du carrousel */
+.carousel-base {
+    width: 100%;
+    max-width: 800px;
+    height: 30px;
+    background-color: #333;
+    clip-path: polygon(50% 0%, 85% 10%, 95% 50%, 85% 90%, 50% 100%, 15% 90%, 5% 50%, 15% 10%, 50% 0%);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: rotateX(45deg) translateZ(-15px); /* Inclinaison pour l'effet 3D */
+    transform-origin: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre */
+    z-index: 1;
+}
+
+.bottom-bas {
+    width: 100%;
+    max-width: 800px;
+    height: 30px;
+    background-color: #333;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 50% 0%);
+    position: absolute;
+    top: 150%;
+    left: 0;
+    transform: rotateX(-45deg) translateZ(-30px); /* Inclinaison inverse pour donner de la profondeur */
+    transform-origin: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre */
+    z-index: 0;
+}
+
+/* Conteneur de la carte cliquée */
+.clicked-card-container {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 96vh;
+    background-color: rgb(12 7 1);; /* Arrière-plan pour bien voir la carte */
+    z-index: 9998; /* Pour passer devant le carrousel */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Carte agrandie */
+.clicked-card {
+    width: 545px;
+    height: 390px;
+    background-color: #7200ff;
+    box-shadow: 0px 0px 20px 14px #00ff9073;
+    transform: scale(1.6);
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 27px;
+    color: blanchedalmond;
+    border: 2px solid #ffd700b3;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+/* Quand la carte cliquée est visible */
+.clicked-card-container.active {
+    display: flex; /* Affiche le conteneur avec la carte centrée */
+}
+
+
+/* Classe pour rendre la carte cliquée fixe et centrée */
+.carousel__face.active {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.7); /* La centrer et l'agrandir */
+    z-index: 999; /* La faire passer devant tout le reste */
+    background-color: white; /* Optionnel : changer le fond pour plus de visibilité */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Optionnel : ombre pour la rendre plus visible */
+    transition: transform 0.3s ease-in-out; /* Transition fluide pour l'effet d'agrandissement */
+}
+
+/* Mettre en pause l'animation du carrousel lorsque la carte est active */
+.carousel.active {
+    animation-play-state: paused; /* Arrêter l'animation de rotation du carrousel */
+}
+/* DEUXIÈME CARROUSEL */
+
+/* Container pour le deuxième carrousel */
+.carousel-container-2 {
+    width: 100%; /* Prend toute la largeur de son conteneur parent */
+    max-width: 400px; /* Limitation de la largeur */
+    height: 400px;
+    perspective: 1200px;
+    display: flex; /* Affiche les éléments à l'intérieur */
+    justify-content: center; /* Centre le carrousel horizontalement */
+    align-items: center; /* Centre le carrousel verticalement */
+    margin: 0 auto; /* Centre le conteneur */
+}
+
+/* Deuxième carrousel */
+    .carousel-container-2 {
+        width: 100%;
+        max-width: 375px;
+        height: 160px;
+        perspective: 900px;
+        margin: 0 auto;
+}
+
+/* Animation de rotation pour le deuxième carrousel */
+@keyframes spin-2 {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Rotation 3D des éléments du deuxième carrousel */
+.carousel-2 .carousel__face:nth-child(1) {
+    transform: rotateY(0deg) translateZ(140px);
+}
+
+.carousel-2 .carousel__face:nth-child(2) {
+    transform: rotateY(72deg) translateZ(140px);
+}
+
+.carousel-2 .carousel__face:nth-child(3) {
+    transform: rotateY(144deg) translateZ(140px);
+}
+
+.carousel-2 .carousel__face:nth-child(4) {
+    transform: rotateY(216deg) translateZ(140px);
+}
+
+.carousel-2 .carousel__face:nth-child(5) {
+    transform: rotateY(288deg) translateZ(140px);
+}
+
+
+
+
+
+
+
+
+
+
+/* Animation pour le formulaire */
+@keyframes slideUp {
+    to {
+        opacity: 1; /* Rend le formulaire visible */
+        transform: translateY(0); /* Remonte le formulaire à sa position d'origine */
+    }
+}
+
+.contact-form {
+    display: inline-block;
+    position: relative;
+    animation: ring 1s infinite;
+    transition: transform 0.2s;
+  }
+  
+  @keyframes ring {
+    0% { transform: rotate(0deg); }
+    1% { transform: rotate(1deg); }
+    3% { transform: rotate(-1deg); }
+    5% { transform: rotate(1deg); }
+    7% { transform: rotate(-1deg); }
+    9% { transform: rotate(1deg); }
+    11% { transform: rotate(-1deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+/* Arcs dans le coin supérieur droit */
+.contact-form::before {
+    content: '))';
+    position: absolute;
+    top: -25px;
+    right: -50px;
+    font-size: 35px;
+    color: black;
+    animation: arcMotion 2s infinite;
+  }
+  
+  /* Arcs dans le coin inférieur gauche */
+  .contact-form::after {
+    content: '( (';
+    position: absolute;
+    bottom: -25px;
+    left: -50px;
+    font-size: 18px;
+    color: black;
+    animation: arcMotion 2s infinite;
+  }
+  
+  /* Animation des arcs pour les faire vibrer */
+
+  @keyframes arcMotion {
+    0% { transform: translate(0, 0) rotate(10deg); }
+    25% { transform: translate(-1px, 3px) rotate(-25deg); }
+    50% { transform: translate(3px, -3px) rotate(-15deg); }
+    75% { transform: translate(-3px, 3px) rotate(-5deg); }
+    100% { transform: translate(0, 0) rotate(10deg); }
+  }
+
+/* Ajout d'une classe pour cacher les arcs */
+.contact-form.hidden-arcs::before,
+.contact-form.hidden-arcs::after {
+  display: none; /* Masque les arcs quand la classe est ajoutée */
+}
+  .hidden {
+    display: none; /* Masque les éléments */
+  }
+
+  @keyframes ring-waves {
+    0% {
+      transform: translate(-50%, -50%) scale(0.5);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1.5);
+      opacity: 0;
+    }
+  }
+

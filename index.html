@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Accueil</title>
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+</head>
+
+<body>
+    <!-- Navigation fixe avec des ancres vers les sections -->
+    <div class="navbar">
+        <ul>
+            <li><a href="#hero">Accueil</a></li> <!-- Lien vers la section Accueil -->
+            <li><a href="#projets">Projets</a></li> <!-- Lien vers la section Projets -->
+            <li><a href="#apropos">À propos</a></li> <!-- Lien vers la section À propos -->
+            <li><a href="#Competences">Compétences</a></li> <!-- Lien vers la section Competences-->
+            <li><a href="#contact">Contact</a></li> <!-- Lien vers la section Contact -->
+        </ul>
+    </div>
+
+    <!-- Section Hero avec parallaxe --> 
+<section id="hero" class="section">
+    <div class="parallax"></div> <!-- Image avec parallaxe animée -->
+    <div class="hero-content">
+        <h1>Bienvenue sur Mon Portfolio</h1> <!-- Titre principal -->
+        <p>Développeur débutant sans prétentions</p> <!-- Sous-titre/Description -->
+    </div>
+    <div class="parallax" id="rain"></div> <!-- Élément de parallaxe et Conteneur pour la pluie -->
+</section>
+
+<!-- Section Projets -->
+<section id="projets-container">
+    <!-- Conteneur pour la carte cliquée (initialement caché) -->
+<div class="clicked-card-container">
+    <div class="clicked-card"></div>
+</div>
+    <div id="projets" class="section">
+        <!-- Titre de la section Projets -->
+        <h2>Projets</h2> 
+        <!-- Description des projets réalisés en formation -->
+        <p>Quelques projets réalisés en formation.</p> 
+
+        <!-- Conteneur du carrousel pour les projets -->
+        <div class="carousel-container">
+            <div class="carousel">
+                <!-- Liste des projets dans le carrousel -->
+                
+                <!-- Projet 1 -->
+                <div class="carousel__face project-item">
+                    <!-- Description du projet -->
+                    <p>Premiers pas sur le langage HTML-site: Riding Cities, actualisation du site d'une association de skate board.</p> 
+                    <!-- Image du projet -->
+                    <img src="assets/images/Riding cities.png" alt="Projet 1"> 
+                    <!-- Lien vers GitHub du projet -->
+                    <a href="#">Voir sur GitHub</a> 
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="carousel__face project-item">
+                    <!-- Description du projet -->
+                    <p>Créez la page d'accueil d'une agence de voyage avec HTML & CSS - site Booki, site de réservation en ligne.</p>
+                    <!-- Image du projet -->
+                    <img src="assets/images/BooKI.png" alt="Projet 2"> 
+                    <!-- Lien vers GitHub du projet -->
+                    <a href="#">Voir sur GitHub</a> 
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="carousel__face project-item">
+                    <!-- Description du projet -->
+                    <p>Créez un site complet avec WordPress sans utiliser de code - site Simple Vintage.</p>
+                    <!-- Image du projet -->
+                    <img src="assets/images/Simple Vintage.png" alt="Projet 3"> 
+                    <!-- Lien vers GitHub du projet -->
+                    <a href="#">Voir sur GitHub</a> 
+                </div>
+
+                <!-- Projet 4 -->
+                <div class="carousel__face project-item">
+                    <!-- Description du projet -->
+                    <p>Personnalisez un thème WordPress pour une startup avec HTML, CSS et PHP - site PLANTY.</p>
+                    <!-- Image du projet -->
+                    <img src="assets/images/PLANTY.png" alt="Projet 4"> 
+                    <!-- Lien vers GitHub du projet -->
+                    <a href="#">Voir sur GitHub</a> 
+                </div>
+
+                <!-- Projet 5 -->
+                <div class="carousel__face project-item">
+                    <!-- Description du projet -->
+                    <p>Optimisez un site WordPress existant pour une marque de vêtements - site Chic Dressing.</p>
+                    <!-- Image du projet -->
+                    <img src="assets/images/Chic Dressing.png" alt="Projet 5"> 
+                    <!-- Lien vers GitHub du projet -->
+                    <a href="#">Voir sur GitHub</a> 
+                </div>
+
+                <!-- Projet 6 -->
+                <div class="carousel__face project-item">
+                    <!-- Description du projet -->
+                    <p>Premiers pas sur le langage JavaScript - site Print it!.</p>
+                    <!-- Image du projet -->
+                    <img src="assets/images/Print it!.png" alt="Projet 6"> 
+                    <!-- Lien vers GitHub du projet -->
+                    <a href="#">Voir sur GitHub</a> 
+                </div>
+
+                <!-- Projet 7 -->
+                <div class="carousel__face project-item">
+                    <!-- Description du projet -->
+                    <p>Améliorez le site d'un studio d'animation avec JavaScript et des animations CSS - site Studio Koukaki.</p>
+                    <!-- Image du projet -->
+                    <img src="assets/images/Koukaki.png" alt="Projet 7"> 
+                    <!-- Lien vers GitHub du projet -->
+                    <a href="#">Voir sur GitHub</a> 
+                </div>
+
+                <!-- Projet 8 -->
+                <div class="carousel__face project-item">
+                    <!-- Description du projet -->
+                    <p>Débuggez et testez un site WordPress d'outillage médical - site MED.IT.</p>
+                    <!-- Image du projet -->
+                    <img src="assets/images/MED.IT.png" alt="Projet 8"> 
+                    <!-- Lien vers GitHub du projet -->
+                    <a href="#">Voir sur GitHub</a> 
+                </div>
+
+                <!-- Projet 9 -->
+                <div class="carousel__face project-item">
+                    <!-- Description du projet -->
+                    <p>Créez un site WordPress complexe pour une photographe freelance - site NATHALIE MOTA.</p>
+                    <!-- Image du projet -->
+                    <img src="assets/images/Photographe Event.png" alt="Projet 9"> 
+                    <!-- Lien vers GitHub du projet -->
+                    <a href="#">Voir sur GitHub</a> 
+                </div>
+
+                <!-- Projet 10 -->
+                <div class="carousel__face project-item">
+                    <!-- Description du projet -->
+                    <p>Planifiez le développement d'un site de vente de vélos électriques - site Emoving.</p>
+                    <!-- Image du projet -->
+                    <img src="assets/images/Emoving.png" alt="Projet 10"> 
+                    <!-- Lien vers GitHub du projet -->
+                    <a href="#">Voir sur GitHub</a> 
+                </div>
+
+                <!-- Projet 11 -->
+                <div class="carousel__face project-item">
+                    <!-- Description du projet -->
+                    <p>Créez et publiez votre portfolio de développeur - site Mon portfolio.</p>
+                    <!-- Image du projet -->
+                    <img src="assets/images/Mon portfolio.png" alt="Projet 11"> 
+                    <!-- Lien vers GitHub du projet -->
+                    <a href="#">Voir sur GitHub</a> 
+                </div>
+            </div>
+    <!-- Socle en haut (9 côtés) -->
+    <div class="carousel-base"></div>
+        </div>
+ 
+             <!-- Deuxième partie : Projets personnels -->
+    <div class="carousel-wrapper">
+        <p>Quelques projets que j'ai réalisés personnellement.</p> <!-- Titre pour la deuxième partie -->
+        <div class="carousel-container carousel-container-2">
+            <div class="carousel carousel-2">
+                <!-- Projet personnel 1 -->
+                <div class="carousel__face project-item">
+                    <img src="assets/images/projet1.jpg" alt="Projet personnel 1"> 
+                    <a href="#">Voir sur GitHub</a>
+                </div>
+
+                <!-- Projet personnel 2 -->
+                <div class="carousel__face project-item">
+                    <img src="assets/images/projet2.jpg" alt="Projet personnel 2"> 
+                    <a href="#">Voir sur GitHub</a>
+                </div>
+
+                <!-- Projet personnel 3 -->
+                <div class="carousel__face project-item">
+                    <img src="assets/images/projet3.jpg" alt="Projet personnel 3"> 
+                    <a href="#">Voir sur GitHub</a>
+                </div>
+
+                <!-- Projet personnel 4 -->
+                <div class="carousel__face project-item">
+                    <img src="assets/images/projet4.jpg" alt="Projet personnel 4"> 
+                    <a href="#">Voir sur GitHub</a>
+                </div>
+
+                <!-- Projet personnel 5 -->
+                <div class="carousel__face project-item">
+                    <img src="assets/images/projet5.jpg" alt="Projet personnel 5"> 
+                    <a href="#">Voir sur GitHub</a>
+                </div>
+            </div>
+             <!-- Socle en bas (5 côtés) -->
+    <div class="bottom-bas"></div>
+        </div>
+ </div>
+
+</section>
+
+    <!-- Section À propos -->
+    <section id="apropos" class="section">
+        <h2>À propos</h2> <!-- Titre de la section -->
+        <br>
+        <p>Je suis un développeur web avec une petite experience.</p>
+       <br>
+        <p>Je suis un développeur web en début de carrière avec une petite mais solide expérience dans la création 
+            de sites web modernes et interactifs. Passionné par le code et toujours curieux d'en apprendre davantage,
+             j'aime relever de nouveaux défis techniques et résoudre des problèmes complexes. Mes compétences incluent
+              le développement front-end avec HTML, CSS et JavaScript, ainsi que l'intégration de solutions basées sur
+               WordPress. Grâce à mon engagement à produire des sites performants et ergonomiques, j'ai eu l'occasion 
+               de participer à plusieurs projets enrichissants. Je cherche constamment à améliorer mes compétences et
+                à explorer de nouvelles technologies. Mon objectif est de créer des expériences web dynamiques qui 
+                répondent aux besoins des utilisateurs tout en respectant les meilleures pratiques. </p> <!-- Texte fictif pour le design -->
+
+                <p>je suis toujours à la recherche de nouveaux défis et d’opportunités pour affiner mes compétences. 
+                    J’aime transformer des idées en expériences web performantes et ergonomiques. Mon objectif est
+                     d’apporter des solutions adaptées aux besoins des utilisateurs tout en restant à la pointe des innovations technologiques.</p>
+
+                     <p>Mon expérience, bien que modeste, m’a permis de collaborer sur des projets variés, allant de la création
+                         de sites vitrines à l’intégration de fonctionnalités dynamiques.
+
+                        Curieux et autodidacte, je m’efforce d’être à jour sur les dernières tendances et innovations technologiques,
+                         afin d’offrir des solutions optimisées, tant pour la performance que pour l’expérience utilisateur. Mon approche
+                          est centrée sur l’ergonomie, la fonctionnalité et la satisfaction client. Je suis convaincu que l’apprentissage 
+                          continu et la persévérance sont les clés du succès dans ce domaine en constante évolution. Mon objectif à long terme
+                           est de devenir un expert reconnu dans le développement web tout en continuant à apprendre et à grandir dans cette 
+                           passionnante industrie.</p>
+                          <div class="w3c-logo"><p>
+                            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                                <img style="border:0;width:88px;height:31px"
+                                    src="./assets/images/vcss-blue.png"
+                                    alt="CSS Valide !" />
+                                </a>
+                            </p></div> 
+    </section>    
+
+         <!-- SECTION COMPÉTENCES---- -->
+    <section id="competences">
+        <h3>Compétences</h3>
+        <div class="skills">
+            <div class="skill-item">HTML</div>
+            <div class="skill-item">CSS</div>
+            <div class="skill-item">JavaScript</div>
+            <div class="skill-item">PHP</div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>Contactez-moi via le formulaire ci-dessous.</p>
+
+        <form class="contact-form">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required> <!-- Champ Nom -->
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required> <!-- Champ Email -->
+
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="4" required></textarea> <!-- Champ Message -->
+
+            <div class="checkbox-container">
+                <!-- Case à cocher pour la politique de confidentialité -->
+                <input type="checkbox" id="privacy-consent" name="privacy-consent" required>
+                <label for="privacy-consent">
+                    En soumettant ce formulaire, j'accepte que mes données soient utilisées pour me recontacter.
+                    <a href="politique.html" target="_blank">Politique de confidentialité</a>.
+                </label>
+            </div>
+
+            <button type="submit">Envoyer</button> <!-- Bouton Envoyer -->
+        </form>
+    </section>
+
+    <!-- Inclusion du fichier JS -->
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>
+
